@@ -7,6 +7,7 @@ import {ImageComponent} from './image.component';
 import {TextInputComponent} from './text-input.component';
 import {MaskInputComponent} from './mask-input.component';
 import {DateTimeInputComponent} from './date-time-input.component';
+import {NumberInputComponent} from './number-input.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import {DateTimeInputComponent} from './date-time-input.component';
     ButtonComponent,
     TextInputComponent,
     MaskInputComponent,
+    NumberInputComponent,
     DateTimeInputComponent
   ], exports : [
     LineComponent,
@@ -26,6 +28,7 @@ import {DateTimeInputComponent} from './date-time-input.component';
     ButtonComponent,
     TextInputComponent,
     MaskInputComponent,
+    NumberInputComponent,
     DateTimeInputComponent
   ]
 })

@@ -1,4 +1,4 @@
-form-line, form-button, form-image, form-text-input, form-mask-input, form-date-time-input {
+form-line, form-button, form-image, form-text-input, form-mask-input, form-number-input, form-date-time-input {
   position: absolute;
   display: block;
   padding: 0;
