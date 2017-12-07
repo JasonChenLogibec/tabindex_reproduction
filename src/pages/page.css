@@ -1,6 +1,6 @@
-form-line, form-button, form-image {
+form-line, form-button, form-image, form-text-input {
   position: absolute;
-  display: inline-block;
+  display: block;
   padding: 0;
   margin: 0;
   border: 0;

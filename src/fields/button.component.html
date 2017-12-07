@@ -2,13 +2,13 @@
      class="form-button"
      [ngStyle]="{ 'font-family': component.fontFamily, 'font-size': component.fontSize, 'font-style': isItalic ? 'italic' : 'initial', 'font-weight': isBold ? 'bold' : 'initial', 'text-decorations': textDecorations.join(' ') }">
   <button *ngIf="!component.isTransparent"
-          [id]="'gde-' + component.componentId"
+          [id]="component.componentId"
           class="form-button"
           [innerHTML]="text"
           [ngStyle]="{ 'height': component.height + 'px', 'width': component.width + 'px' }"
           [disabled]="isEnabled.currentValue ? null : 'disabled'"></button>
   <div *ngIf="component.isTransparent"
-       [id]="'gde-' + component.componentId"
+       [id]="component.componentId"
        class="form-button"
        [ngStyle]="{ 'height': component.height + 'px', 'width': component.width + 'px' }"
        [attr.disabled]="isEnabled.currentValue ? null : 'disabled'"

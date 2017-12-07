@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {ButtonComponent} from './button.component';
 import {ImageComponent} from './image.component';
+import {TextInputComponent} from './text-input.component';
 
 @NgModule({
   imports: [
@@ -13,11 +14,13 @@ import {ImageComponent} from './image.component';
   declarations: [
     LineComponent,
     ImageComponent,
-    ButtonComponent
+    ButtonComponent,
+    TextInputComponent
   ], exports : [
     LineComponent,
     ImageComponent,
-    ButtonComponent
+    ButtonComponent,
+    TextInputComponent
   ]
 })
 export class FieldsModule {
