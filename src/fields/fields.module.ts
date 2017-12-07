@@ -6,6 +6,7 @@ import {ButtonComponent} from './button.component';
 import {ImageComponent} from './image.component';
 import {TextInputComponent} from './text-input.component';
 import {MaskInputComponent} from './mask-input.component';
+import {DateTimeInputComponent} from './date-time-input.component';
 
 @NgModule({
   imports: [
@@ -17,13 +18,15 @@ import {MaskInputComponent} from './mask-input.component';
     ImageComponent,
     ButtonComponent,
     TextInputComponent,
-    MaskInputComponent
+    MaskInputComponent,
+    DateTimeInputComponent
   ], exports : [
     LineComponent,
     ImageComponent,
     ButtonComponent,
     TextInputComponent,
-    MaskInputComponent
+    MaskInputComponent,
+    DateTimeInputComponent
   ]
 })
 export class FieldsModule {

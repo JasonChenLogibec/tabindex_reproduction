@@ -5,6 +5,7 @@ import {PageFiveComponent} from './page-five.component';
 import {PageThreeComponent} from './page-three.component';
 import {PageSixComponent} from './page-six.component';
 import {PageSevenComponent} from './page-seven.component';
+import {PageNineComponent} from './page-nine.component';
 
 @NgModule({
   imports: [FieldsModule],
@@ -13,14 +14,16 @@ import {PageSevenComponent} from './page-seven.component';
     PageThreeComponent,
     PageFiveComponent,
     PageSixComponent,
-    PageSevenComponent
+    PageSevenComponent,
+    PageNineComponent
   ],
   exports: [
     PageTwoComponent,
     PageThreeComponent,
     PageFiveComponent,
     PageSixComponent,
-    PageSevenComponent
+    PageSevenComponent,
+    PageNineComponent
   ]
 })
 export class PagesModule {

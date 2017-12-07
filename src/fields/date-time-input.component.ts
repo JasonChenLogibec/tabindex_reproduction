@@ -1,15 +1,15 @@
 import {Component, Input} from '@angular/core';
 import {GenericInputComponent} from './generic-input.component';
+import {DateTimeFieldDefinition} from '../definitions/field.definitions';
 import {StyleHelperService} from '../helpers/style-helper.service';
 import {FieldPropertiesConstants} from '../definitions/field-properties.constants';
-import {SpecialFieldDefinition} from '../definitions/field.definitions';
 
 @Component({
-  selector: 'form-mask-input',
+  selector: 'form-date-time-input',
   styleUrls: ['./generic-input.component.css'],
-  templateUrl: './mask-input.component.html'
+  templateUrl: './date-time-input.component.html'
 })
-export class MaskInputComponent extends GenericInputComponent {
+export class DateTimeInputComponent extends GenericInputComponent {
   constructor(_fieldProperties: FieldPropertiesConstants, _styleHelper: StyleHelperService) {
     super(_fieldProperties, _styleHelper);
   }
@@ -17,7 +17,7 @@ export class MaskInputComponent extends GenericInputComponent {
   isFocused = false;
 
   @Input()
-  component: SpecialFieldDefinition;
+  component: DateTimeFieldDefinition;
 
   handleFocus() {
     this.isFocused = true;
