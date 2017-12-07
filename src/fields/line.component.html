@@ -1,0 +1,10 @@
+<svg [id]="'gde-' + component.componentId"
+     [ngClass]="{ 'ng-hide': isVisible && !isVisible.currentValue }">
+  <line [attr.x1]="normalizedX1"
+        [attr.x2]="normalizedX2"
+        [attr.y1]="normalizedY1"
+        [attr.y2]="normalizedY2"
+        [attr.stroke]="component.lineColor"
+        [attr.stroke-dasharray]="dashArray"
+        [attr.stroke-width]="component.lineWidth"></line>
+</svg>
