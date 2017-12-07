@@ -5,6 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ButtonComponent} from './button.component';
 import {ImageComponent} from './image.component';
 import {TextInputComponent} from './text-input.component';
+import {MaskInputComponent} from './mask-input.component';
 
 @NgModule({
   imports: [
@@ -15,12 +16,14 @@ import {TextInputComponent} from './text-input.component';
     LineComponent,
     ImageComponent,
     ButtonComponent,
-    TextInputComponent
+    TextInputComponent,
+    MaskInputComponent
   ], exports : [
     LineComponent,
     ImageComponent,
     ButtonComponent,
-    TextInputComponent
+    TextInputComponent,
+    MaskInputComponent
   ]
 })
 export class FieldsModule {

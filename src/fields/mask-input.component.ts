@@ -1,15 +1,15 @@
 import {Component, Input} from '@angular/core';
 import {GenericInputComponent} from './generic-input.component';
-import {TextFieldDefinition} from '../definitions/field.definitions';
-import {FieldPropertiesConstants} from '../definitions/field-properties.constants';
 import {StyleHelperService} from '../helpers/style-helper.service';
+import {FieldPropertiesConstants} from '../definitions/field-properties.constants';
+import {TextFieldDefinition} from '../definitions/field.definitions';
 
 @Component({
-  selector: 'form-text-input',
+  selector: 'form-mask-input',
   styleUrls: ['./generic-input.component.css'],
-  templateUrl: './text-input.component.html'
+  templateUrl: './mask-input.component.html'
 })
-export class TextInputComponent extends GenericInputComponent {
+export class MaskInputComponent extends GenericInputComponent {
   constructor(_fieldProperties: FieldPropertiesConstants, _styleHelper: StyleHelperService) {
     super(_fieldProperties, _styleHelper);
   }
