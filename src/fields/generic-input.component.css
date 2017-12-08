@@ -22,10 +22,17 @@ svg {
   z-index: 0;
 }
 
+/*
+ BUGGY: causes SVG lines to "overflow" from the container on scroll --despite the position being correct and any
+ overflow:hidden we might add all along the chain. */
 [disabled] .activeStyle {
   display: none;
 }
 
-:not([disabled]) .inactiveStyle {
+.inactiveStyle {
   display: none;
+}
+
+[disabled] .inactiveStyle {
+  display: block;
 }

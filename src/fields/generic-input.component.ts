@@ -105,9 +105,6 @@ export class GenericInputComponent implements OnInit {
       this._overridingInactiveFillColor = 'rgba(0,0,0,0)';
     if (activeFillStyle === this.fieldProperties.id_brushstyle_clear)
       this._overridingActiveFillColor = 'rgba(0,0,0,0)';
-
-    if ((<any>this.component).objectType === 'number')
-      console.log(this.component);
   }
 
   private _fontStyleProperty: FieldProperty;

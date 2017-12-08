@@ -8,6 +8,7 @@ import {PageSevenComponent} from './page-seven.component';
 import {PageNineComponent} from './page-nine.component';
 import {PageEightComponent} from './page-eight.component';
 import {PageTenComponent} from './page-ten.component';
+import {PageElevenComponent} from './page-eleven.component';
 
 @NgModule({
   imports: [FieldsModule],
@@ -19,7 +20,8 @@ import {PageTenComponent} from './page-ten.component';
     PageSevenComponent,
     PageEightComponent,
     PageNineComponent,
-    PageTenComponent
+    PageTenComponent,
+    PageElevenComponent
   ],
   exports: [
     PageTwoComponent,
@@ -29,7 +31,8 @@ import {PageTenComponent} from './page-ten.component';
     PageSevenComponent,
     PageEightComponent,
     PageNineComponent,
-    PageTenComponent
+    PageTenComponent,
+    PageElevenComponent
   ]
 })
 export class PagesModule {
