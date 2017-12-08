@@ -9,6 +9,7 @@ import {MaskInputComponent} from './mask-input.component';
 import {DateTimeInputComponent} from './date-time-input.component';
 import {NumberInputComponent} from './number-input.component';
 import {TimeInputComponent} from './time-input.component';
+import {MemoComponent} from './memo.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {TimeInputComponent} from './time-input.component';
     MaskInputComponent,
     NumberInputComponent,
     DateTimeInputComponent,
-    TimeInputComponent
+    TimeInputComponent,
+    MemoComponent
   ], exports : [
     LineComponent,
     ImageComponent,
@@ -32,7 +34,8 @@ import {TimeInputComponent} from './time-input.component';
     MaskInputComponent,
     NumberInputComponent,
     DateTimeInputComponent,
-    TimeInputComponent
+    TimeInputComponent,
+    MemoComponent
   ]
 })
 export class FieldsModule {
