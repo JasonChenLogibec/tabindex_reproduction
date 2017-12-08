@@ -1,21 +1,20 @@
-<div class="input-container"
-     [ngClass]="{ 'ng-hide': !visibleProperty.currentValue, 'g-error': isInError, 'g-is-focused': isFocused }">
-  <textarea #textInput
-         [name]="fieldName"
+<div [ngClass]="{ 'ng-hide': !visibleProperty.currentValue, 'g-error': isInError, 'g-is-focused': isFocused }"
+     class="input-container">
+  <input [name]="fieldName"
          class="input-component"
+         type="checkbox"
          [id]="fieldId"
+         [disabled]="!enabledProperty.currentValue ? 'disabled' : null"
+         [(ngModel)]="model.form.data[fieldName]"
          (focus)="handleFocus()"
          (blur)="handleBlur()"
-         [disabled]="!enabledProperty.currentValue ? 'disabled' : null"
-         [attr.maxLength]="component.maxLength ? component.maxLength : null"
-         [ngModel]="model.form.data[fieldName]"
-         (ngModelChange)="onModelChange($event)"
          [style.color]="colorProperty.currentValue"
-         [style.font-style]="isItalic ? 'italic' : 'normal'"
-         [style.font-weight]="isBold ? 'bold' : 'normal'"
-         [style.text-decoration]="textDecorations"
-         [attr.title]="hintProperty.currentValue"></textarea>
-  <svg #textSvg class="fieldStyleDisplay input-component"
+         [tabindex]="component.tabOrder"
+         [attr.title]="hintProperty.currentValue"/>
+  <label [for]="fieldId" class="input-component checkmark" [ngClass]="{'ng-hide': !model.form.data[fieldName] }" [style.color]="enabledProperty.currentValue ? component.borderColor : component.inactiveBorderColor">
+    <i class="material-icons">check</i>
+  </label>
+  <svg #checkboxSvg class="input-component"
        [id]="svgId"
        [attr.disabled]="!enabledProperty.currentValue ? 'disabled' : null">
     <defs [innerHTML]="patternDefinitions"></defs>
@@ -26,13 +25,6 @@
           [attr.width]="fillWidth"
           [attr.height]="fillHeight"
           [attr.fill]="inactiveFillValue"></rect>
-    <rect *ngIf="inactiveLineFillValue"
-          class="inactiveStyle lines"
-          x="0"
-          y="0"
-          [attr.width]="fillWidth"
-          [attr.height]="fillHeight"
-          [attr.fill]="inactiveLineFillValue"></rect>
     <path class="inactiveStyle borderPath"
           *ngIf="inactiveBorderPath"
           [attr.d]="inactiveBorderPath"
@@ -47,13 +39,6 @@
           [attr.width]="fillWidth"
           [attr.height]="fillHeight"
           [attr.fill]="activeFillValue"></rect>
-    <rect *ngIf="activeLineFillValue"
-          class="activeStyle lines"
-          x="0"
-          y="0"
-          [attr.width]="fillWidth"
-          [attr.height]="fillHeight"
-          [attr.fill]="activeLineFillValue"></rect>
     <path class="activeStyle borderPath"
           *ngIf="activeBorderPath"
           [attr.d]="activeBorderPath"

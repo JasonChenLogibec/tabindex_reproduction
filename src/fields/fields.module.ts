@@ -10,6 +10,7 @@ import {DateTimeInputComponent} from './date-time-input.component';
 import {NumberInputComponent} from './number-input.component';
 import {TimeInputComponent} from './time-input.component';
 import {MemoComponent} from './memo.component';
+import {CheckboxComponent} from './checkbox.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import {MemoComponent} from './memo.component';
     NumberInputComponent,
     DateTimeInputComponent,
     TimeInputComponent,
-    MemoComponent
+    MemoComponent,
+    CheckboxComponent
   ], exports : [
     LineComponent,
     ImageComponent,
@@ -35,7 +37,8 @@ import {MemoComponent} from './memo.component';
     NumberInputComponent,
     DateTimeInputComponent,
     TimeInputComponent,
-    MemoComponent
+    MemoComponent,
+    CheckboxComponent
   ]
 })
 export class FieldsModule {

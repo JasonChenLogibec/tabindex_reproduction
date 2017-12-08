@@ -96,7 +96,7 @@ export class GenericInputComponent implements OnInit {
     this.activeBorderPath = !component.borders ? '' : this.styleHelper.toPath(component.borders, component.width, component.height, component.borderWidth);
     this.activeBorderDashArray = this.styleHelper.toDashArray(component.borderStyle);
     this.activeFillValue = activeFillSpecs.fillValue;
-    this.inactiveBorderPath = !component.inactiveBorders ? '' : this.styleHelper.toPath(component.inactiveBorders, component.width, component.height, component.borderWidth);
+    this.inactiveBorderPath = !component.inactiveBorders ? '' : this.styleHelper.toPath(component.inactiveBorders, component.width, component.height, component.inactiveBorderWidth);
     this.inactiveBorderDashArray = this.styleHelper.toDashArray(component.inactiveBorderStyle);
     this.inactiveFillValue = inactiveFillSpecs.fillValue;
     this.patternDefinitions = this.styleHelper.joinFillPatterns([activeFillSpecs, inactiveFillSpecs]);

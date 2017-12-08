@@ -1,7 +1,5 @@
 <div class="input-container"
-     [ngClass]="{ 'ng-hide': !visibleProperty.currentValue, 'g-error': isInError, 'g-is-focused': isFocused }"
-     [style.width]="component.width + 'px'"
-     [style.height]="component.height + 'px'">
+     [ngClass]="{ 'ng-hide': !visibleProperty.currentValue, 'g-error': isInError, 'g-is-focused': isFocused }">
   <input #textInput
          [name]="fieldName"
          class="input-component"
@@ -10,7 +8,6 @@
          (focus)="handleFocus()"
          (blur)="handleBlur()"
          [disabled]="!enabledProperty.currentValue ? 'disabled' : null"
-         [attr.maxLength]="component.maxLength ? component.maxLength : null"
          [(ngModel)]="model.form.data[fieldName]"
          [style.color]="colorProperty.currentValue"
          [style.font-style]="isItalic ? 'italic' : 'normal'"
