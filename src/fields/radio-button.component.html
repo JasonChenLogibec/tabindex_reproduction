@@ -1,0 +1,101 @@
+<div [ngClass]="{ 'ng-hide': !visibleProperty.currentValue, 'error': isInError, 'checked': model.form.data[groupName] === component.componentId }"
+     class="input-container">
+  <div style="display: none;">{{model.form.data[groupName]}}</div>
+  <!--[name] allows Angular to manage the group, but DOES NOT output the name attribute to the DOM, which we need for JQuery manipulations (idem for [value]).-->
+  <!--Conversely, [attr.name] outputs the name attribute to the DOM, but Angular ignores it when handling radio groups (idem for [attr.value]). -->
+  <input #radioInput
+         [name]="groupIndex"
+         [attr.name]="groupIndex"
+         class="input-component"
+         type="radio"
+         [id]="fieldId"
+         [disabled]="!enabledProperty.currentValue ? 'disabled' : null"
+         [(ngModel)]="model.form.data[groupName]"
+         (focus)="handleFocus()"
+         (blur)="handleBlur()"
+         (keydown)="handleKeydown($event)"
+         [attr.title]="hintProperty.currentValue"
+         [value]="component.componentId"
+         [attr.value]="component.componentId"/>
+  <label [for]="fieldId" class="input-component checkmark" [ngClass]="{'ng-hide': !(enabledProperty.currentValue ? component.isActiveCheckbox : component.isInactiveCheckbox) }" [style.color]="enabledProperty.currentValue ? component.borderColor : component.inactiveBorderColor">
+    <i class="material-icons" [ngClass]="{ 'ng-hide': model.form.data[groupName] !== fieldId }">check</i>
+  </label>
+  <svg #radioSvg class="input-component"
+       [id]="svgId"
+       [attr.disabled]="!enabledProperty.currentValue ? 'disabled' : null">
+    <defs [innerHTML]="patternDefinitions"></defs>
+
+    <circle *ngIf="!component.isInactiveCheckbox"
+            class="inactiveStyle fillCircle"
+            [attr.cx]="component.width / 2"
+            [attr.cy]="component.height / 2"
+            [attr.r]="(component.width - component.inactiveBorderWidth) / 2"
+            [attr.fill]="inactiveFillValue"></circle>
+    <circle *ngIf="!component.isInactiveCheckbox"
+            class="inactiveStyle borderCircle"
+            [attr.cx]="component.width / 2"
+            [attr.cy]="component.height / 2"
+            [attr.r]="(component.width - component.inactiveBorderWidth) / 2"
+            [attr.stroke]="component.inactiveBorderColor"
+            [attr.stroke-dasharray]="inactiveBorderDashArray"
+            [attr.stroke-width]="component.inactiveBorderWidth"
+            fill="rgba(0,0,0,0)"></circle>
+    <circle *ngIf="!component.isInactiveCheckbox"
+            class="inactiveStyle innerCircle"
+            [attr.cx]="component.width / 2"
+            [attr.cy]="component.height / 2"
+            [attr.r]="5"
+            [attr.fill]="component.inactiveBorderColor"></circle>
+    <rect *ngIf="isInactiveCheckbox"
+          class="inactiveStyle"
+          x="0"
+          y="0"
+          [attr.stroke]="inactiveFillColor"
+          [attr.width]="fillWidth"
+          [attr.height]="fillHeight"
+          [attr.fill]="inactiveFillValue"></rect>
+    <path *ngIf="isInactiveCheckbox && inactiveBorderPath"
+          class="inactiveStyle borderPath"
+          [attr.d]="inactiveBorderPath"
+          [attr.stroke-dasharray]="inactiveBorderDashArray"
+          [attr.stroke]="component.inactiveBorderColor"
+          [attr.stroke-width]="component.inactiveBorderWidth"
+          fill="rgba(0,0,0,0)"></path>
+
+    <circle *ngIf="!component.isActiveCheckbox"
+            class="activeStyle fillCircle"
+            [attr.cx]="component.width / 2"
+            [attr.cy]="component.height / 2"
+            [attr.r]="(component.width - component.borderWidth) / 2"
+            [attr.fill]="activeFillValue"></circle>
+    <circle *ngIf="!component.isActiveCheckbox"
+            class="activeStyle borderCircle"
+            [attr.cx]="component.width / 2"
+            [attr.cy]="component.height / 2"
+            [attr.r]="(component.width - component.borderWidth) / 2"
+            [attr.stroke]="component.borderColor"
+            [attr.stroke-dasharray]="activeBorderDashArray"
+            [attr.stroke-width]="component.borderWidth"
+            fill="rgba(0,0,0,0)"></circle>
+    <circle *ngIf="!component.isActiveCheckbox"
+            class="activeStyle innerCircle"
+            [attr.cx]="component.width / 2"
+            [attr.cy]="component.height / 2"
+            [attr.r]="5"
+            [attr.fill]="component.borderColor"></circle>
+    <rect *ngIf="component.isActiveCheckbox" class="activeStyle"
+          x="0"
+          y="0"
+          [attr.stroke]="activeFillColor"
+          [attr.width]="fillWidth"
+          [attr.height]="fillHeight"
+          [attr.fill]="activeFillValue"></rect>
+    <path *ngIf="component.isActiveCheckbox && activeBorderPath"
+          class="activeStyle borderPath"
+          [attr.d]="activeBorderPath"
+          [attr.stroke-dasharray]="activeBorderDashArray"
+          [attr.stroke]="component.borderColor"
+          [attr.stroke-width]="component.borderWidth"
+          fill="rgba(0,0,0,0)"></path>
+  </svg>
+</div>

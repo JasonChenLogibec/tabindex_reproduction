@@ -1,0 +1,2 @@
+.innerCircle { opacity: 0; }
+.checked .innerCircle { opacity: 1; }

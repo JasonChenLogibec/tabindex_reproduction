@@ -50,13 +50,13 @@ export class MemoComponent
     let textHeight = Number.parseFloat(this.component.textHeight),
       allFillSpecs: Array<ComponentFillSpecs> = [];
     if (this.component.activeLine) {
-      let activeLineSpecs = this.styleHelper.toMemoLineFillSpecs('activeLinePattern' + this.fieldId, this.component.activeLine, textHeight);
+      let activeLineSpecs = this.styleHelper.toMemoLineFillSpecs('activeLinePattern' + this.component.componentId, this.component.activeLine, textHeight);
       this.activeLineFillValue = activeLineSpecs.fillValue;
       allFillSpecs.push(activeLineSpecs);
     }
 
     if (this.component.inactiveLine) {
-      let inactiveLineSpecs = this.styleHelper.toMemoLineFillSpecs('inactiveLinePattern' + this.fieldId, this.component.inactiveLine, textHeight);
+      let inactiveLineSpecs = this.styleHelper.toMemoLineFillSpecs('inactiveLinePattern' + this.component.componentId, this.component.inactiveLine, textHeight);
       this.inactiveLineFillValue = inactiveLineSpecs.fillValue;
       allFillSpecs.push(inactiveLineSpecs);
     }
