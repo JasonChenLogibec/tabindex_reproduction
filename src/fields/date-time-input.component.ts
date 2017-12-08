@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {GenericInputComponent} from './generic-input.component';
-import {DateTimeFieldDefinition} from '../definitions/field.definitions';
+import {DateFieldDefinition, DateTimeFieldDefinition} from '../definitions/field.definitions';
 import {StyleHelperService} from '../helpers/style-helper.service';
 import {FieldPropertiesConstants} from '../definitions/field-properties.constants';
 
@@ -17,7 +17,7 @@ export class DateTimeInputComponent extends GenericInputComponent {
   isFocused = false;
 
   @Input()
-  component: DateTimeFieldDefinition;
+  component: DateTimeFieldDefinition | DateFieldDefinition;
 
   handleFocus() {
     this.isFocused = true;

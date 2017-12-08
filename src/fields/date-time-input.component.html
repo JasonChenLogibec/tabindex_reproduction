@@ -5,7 +5,7 @@
   <input #textInput
          [name]="fieldName"
          class="input-component"
-         type="datetime-local"
+         type="date"
          [id]="fieldId"
          (focus)="handleFocus()"
          (blur)="handleBlur()"
@@ -16,7 +16,7 @@
          [style.font-style]="isItalic ? 'italic' : 'normal'"
          [style.font-weight]="isBold ? 'bold' : 'normal'"
          [style.text-decoration]="textDecorations"
-         [attr.title]="hintProperty.currentValue" />
+         [attr.title]="hintProperty.currentValue"/>
   <svg #textSvg class="fieldStyleDisplay input-component"
        [id]="svgId"
        [attr.disabled]="!enabledProperty.currentValue ? 'disabled' : null">
