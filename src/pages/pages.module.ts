@@ -13,6 +13,7 @@ import {PageTwelveComponent} from './page-twelve.component';
 import {PageThirteenComponent} from './page-thirteen.component';
 import {PageFourteenComponent} from './page-fourteen.component';
 import {PageFifteenComponent} from './page-fifteen.component';
+import {PageSixteenComponent} from './page-sixteen.component';
 
 @NgModule({
   imports: [FieldsModule],
@@ -29,7 +30,8 @@ import {PageFifteenComponent} from './page-fifteen.component';
     PageTwelveComponent,
     PageThirteenComponent,
     PageFourteenComponent,
-    PageFifteenComponent
+    PageFifteenComponent,
+    PageSixteenComponent
   ],
   exports: [
     PageTwoComponent,
@@ -44,7 +46,8 @@ import {PageFifteenComponent} from './page-fifteen.component';
     PageTwelveComponent,
     PageThirteenComponent,
     PageFourteenComponent,
-    PageFifteenComponent
+    PageFifteenComponent,
+    PageSixteenComponent
   ]
 })
 export class PagesModule {

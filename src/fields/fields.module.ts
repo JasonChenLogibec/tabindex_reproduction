@@ -12,6 +12,7 @@ import {TimeInputComponent} from './time-input.component';
 import {MemoComponent} from './memo.component';
 import {CheckboxComponent} from './checkbox.component';
 import {RadioButtonComponent} from './radio-button.component';
+import {DropDownListComponent} from './drop-down-list.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import {RadioButtonComponent} from './radio-button.component';
     TimeInputComponent,
     MemoComponent,
     CheckboxComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
+    DropDownListComponent
   ], exports : [
     LineComponent,
     ImageComponent,
@@ -41,7 +43,8 @@ import {RadioButtonComponent} from './radio-button.component';
     TimeInputComponent,
     MemoComponent,
     CheckboxComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
+    DropDownListComponent
   ]
 })
 export class FieldsModule {

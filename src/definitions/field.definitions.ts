@@ -138,10 +138,12 @@ export type RadioDefinition = {
 
 export type DropDownListDefinition = {
   objectType: 'combobox';
+  dataList: Array<any>;
 } & GenericFieldDefinition;
 
 export type ComboMixDefinition = {
   objectType: 'combomix';
+  dataList: Array<any>;
 } & GenericFieldDefinition;
 
 export type StampFieldDefinition = {
