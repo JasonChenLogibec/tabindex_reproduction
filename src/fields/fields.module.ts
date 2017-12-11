@@ -14,6 +14,7 @@ import {CheckboxComponent} from './checkbox.component';
 import {RadioButtonComponent} from './radio-button.component';
 import {DropDownListComponent} from './drop-down-list.component';
 import {ComboboxComponent} from './combobox.component';
+import {StampComponent} from './stamp.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {ComboboxComponent} from './combobox.component';
     CheckboxComponent,
     RadioButtonComponent,
     DropDownListComponent,
-    ComboboxComponent
+    ComboboxComponent,
+    StampComponent
   ], exports : [
     LineComponent,
     ImageComponent,
@@ -47,7 +49,8 @@ import {ComboboxComponent} from './combobox.component';
     CheckboxComponent,
     RadioButtonComponent,
     DropDownListComponent,
-    ComboboxComponent
+    ComboboxComponent,
+    StampComponent
   ]
 })
 export class FieldsModule {
