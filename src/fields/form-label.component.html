@@ -1,0 +1,36 @@
+<div class="input-container"
+     [ngClass]="{ 'ng-hide': !visibleProperty.currentValue, 'g-error': isInError, 'g-is-focused': isFocused }"
+     [style.width]="component.width + 'px'"
+     [style.height]="component.height + 'px'">
+  <div #textInput
+       class="input-component label-text"
+       [id]="fieldId"
+       [innerHTML]="component.text"
+       [style.color]="colorProperty.currentValue"
+       [style.font-family]="component.fontFamily"
+       [style.font-style]="isItalic ? 'italic' : 'normal'"
+       [style.font-weight]="isBold ? 'bold' : 'normal'"
+       [style.text-decoration]="textDecorations"
+       [style.overflow-wrap]="component.wordWrap ? 'break-word' : 'normal'"
+       [style.white-space]="component.wordWrap ? 'pre-wrap' : 'pre'"
+       [style.text-align]="component.textAlign"
+       [attr.title]="hintProperty.currentValue"></div>
+  <svg #textSvg class="fieldStyleDisplay input-component"
+       [id]="svgId">
+    <defs [innerHTML]="patternDefinitions"></defs>
+    <rect class="activeStyle"
+          x="0"
+          y="0"
+          [attr.stroke]="inactiveFillColor"
+          [attr.width]="fillWidth"
+          [attr.height]="fillHeight"
+          [attr.fill]="inactiveFillValue"></rect>
+    <path class="activeStyle borderPath"
+          *ngIf="inactiveBorderPath"
+          [attr.d]="inactiveBorderPath"
+          [attr.stroke-dasharray]="inactiveBorderDashArray"
+          [attr.stroke]="component.borderColor"
+          [attr.stroke-width]="component.borderWidth"
+          fill="rgba(0,0,0,0)"></path>
+  </svg>
+</div>

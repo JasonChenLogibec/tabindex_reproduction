@@ -38,6 +38,7 @@ export type ImageDefinition = CommonDefinition & {
 
 export type DisplayTextDefinition = CommonDefinition & {
   objectType: 'displaytext';
+  tabOrder: -1;
   borders?: string;
   borderStyle?: number;
   borderWidth?: number;

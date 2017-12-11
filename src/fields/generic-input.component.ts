@@ -91,8 +91,8 @@ export class GenericInputComponent implements OnInit {
     this._fontStyleProperty = fieldProperties.fontStyle;
     this.isInError = this.checkIsInError;
 
-    this.fillWidth = component.width - ((component.borders.indexOf('r') >= 0 || component.inactiveBorders.indexOf('r') >= 0) ? 1 : 0);
-    this.fillHeight = component.height - ((component.borders.indexOf('b') >= 0 || component.inactiveBorders.indexOf('b') >= 0) ? 1 : 0);
+    this.fillWidth = component.width - ((component.borders.indexOf('r') >= 0 || (component.inactiveBorders && component.inactiveBorders.indexOf('r') >= 0)) ? 1 : 0);
+    this.fillHeight = component.height - ((component.borders.indexOf('b') >= 0 || (component.inactiveBorders && component.inactiveBorders.indexOf('b') >= 0)) ? 1 : 0);
     this.activeBorderPath = !component.borders ? '' : this.styleHelper.toPath(component.borders, component.width, component.height, component.borderWidth);
     this.activeBorderDashArray = this.styleHelper.toDashArray(component.borderStyle);
     this.activeFillValue = activeFillSpecs.fillValue;

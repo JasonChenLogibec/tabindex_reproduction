@@ -6,6 +6,7 @@
   border: 1px solid black;
   margin: 15px 5px;
   position: relative;
+  overflow: hidden;
 }
 
 .ng-hide {

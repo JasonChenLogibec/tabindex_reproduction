@@ -1,0 +1,5 @@
+.label-text {
+  z-index: 2;
+  background: transparent;
+  overflow: hidden;
+}

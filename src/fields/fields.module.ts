@@ -15,6 +15,7 @@ import {RadioButtonComponent} from './radio-button.component';
 import {DropDownListComponent} from './drop-down-list.component';
 import {ComboboxComponent} from './combobox.component';
 import {StampComponent} from './stamp.component';
+import {FormLabelComponent} from './form-label.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import {StampComponent} from './stamp.component';
   declarations: [
     LineComponent,
     ImageComponent,
+    FormLabelComponent,
     ButtonComponent,
     TextInputComponent,
     MaskInputComponent,
@@ -39,6 +41,7 @@ import {StampComponent} from './stamp.component';
   ], exports : [
     LineComponent,
     ImageComponent,
+    FormLabelComponent,
     ButtonComponent,
     TextInputComponent,
     MaskInputComponent,
