@@ -1,0 +1,35 @@
+<svg [id]="'gde-' + component.componentId"
+     [ngClass]="{ 'ng-hide': isVisible && !isVisible.currentValue }"
+     [ngStyle]="{ width: component.width + 'px', height: component.height + 'px'}">
+  <defs *ngIf="fillPattern" [innerHTML]="fillPattern"></defs>
+  <circle *ngIf="component.isEllipse"
+          [attr.cx]="component.width / 2"
+          [attr.cy]="component.height / 2"
+          [attr.r]="(component.width - component.borderWidth) / 2"
+          stroke="transparent"
+          stroke-width="1px"
+          [attr.fill]="fillValue"></circle>
+  <circle *ngIf="component.isEllipse"
+          [attr.cx]="component.width / 2"
+          [attr.cy]="component.height / 2"
+          [attr.r]="(component.width - component.borderWidth) / 2"
+          [attr.stroke]="component.borderColor"
+          [attr.stroke-dasharray]="strokeDashArray"
+          [attr.stroke-width]="component.borderWidth"
+          fill="transparent"></circle>
+  <rect *ngIf="!component.isEllipse && !component.fillPath"
+        [attr.x]="(component.borderWidth / 2) + 'px'"
+        [attr.y]="(component.borderWidth / 2) + 'px'"
+        [attr.width]="(component.width - component.borderWidth) + 'px'"
+        [attr.height]="(component.height - component.borderWidth) + 'px'"
+        [attr.stroke-width]="component.borderWidth"
+        [attr.stroke]="component.borderColor"
+        [attr.fill]="fillValue"></rect>
+  <path *ngIf="!component.isEllipse && !!component.fillPath" [attr.d]="component.fillPath"
+        [attr.stroke]="component.borderPath ? 'rgba(0,0,0,0)' : component.borderColor"
+        [attr.stroke-width]="component.borderWidth + 'px'" [attr.stroke-dasharray]="strokeDashArray"
+        [attr.fill]="fillValue"></path>
+  <path class="borderPath" *ngIf="!component.isEllipse && !!component.borderPath" [attr.d]="component.borderPath" [attr.stroke]="component.borderColor"
+        [attr.stroke-width]="component.borderWidth + 'px'" [attr.stroke-dasharray]="strokeDashArray"
+        fill="rgba(0,0,0,0)"></path>
+</svg>

@@ -16,6 +16,7 @@ import {DropDownListComponent} from './drop-down-list.component';
 import {ComboboxComponent} from './combobox.component';
 import {StampComponent} from './stamp.component';
 import {FormLabelComponent} from './form-label.component';
+import {FormShapeComponent} from './form-shape.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import {FormLabelComponent} from './form-label.component';
     FormsModule
   ],
   declarations: [
+    FormShapeComponent,
     LineComponent,
     ImageComponent,
     FormLabelComponent,
@@ -39,6 +41,7 @@ import {FormLabelComponent} from './form-label.component';
     ComboboxComponent,
     StampComponent
   ], exports : [
+    FormShapeComponent,
     LineComponent,
     ImageComponent,
     FormLabelComponent,
